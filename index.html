@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./all.min.css" />
+  </head>
+  <body>
+    <nav>
+      <h2 id="logo">Rodger Li</h2>
+      <ul class="navigation-items">
+        <li class="navigation-item"><a href="./index.html#about-me">About Me</a></li>
+        <li class="navigation-item"><a href="./lithuanian-diary.html">Lithuanian Diary</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-container">
+            <h2>About Me</h2>
+            <p>
+              Hi! I'm Rodger, an Australian with Chinese heritage and can
+              speak Japanese and a little Lithuanian. I'm known by others
+              to be down to earth, calm, and approachable.
+            </p>
+            <p>
+              For the past five years I've worked in I.T. as a consultant,
+              focusing on Red Hat Enterprise Linux systems and I.T. automation.
+              I enjoy tackling challenges, finding effective solutions, and
+              appreciate how difficult it can be do that.
+            </p>
+            <p>
+              In my free time I love gorillas and find inspiration in their strength
+              and sometimes gentle nature. I practice boxing and judo to stay active
+              and I'm always looking for opportunities to snorkel and scuba dive.
+            </p>
+            <p>
+              Fun fact! I've been working in tech for
+              <span id="time-container">0</span> seconds!
+            </p>
+          </div>
+          <img
+            src="./images/profile_picture.jpeg"
+            alt="A photo of Rodger Li"
+            class="portrait"
+          />
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Enterprise Starter Pack</h3>
+          </summary>
+          <img
+            src="https://github.com/r0dg3rl1/enterprise_starter_pack/blob/main/images/esp_meme.png?raw=true"
+            alt="Enterprise Starter Pack"
+            class="project-image"
+          />
+          <p class="project-description">
+            Inspired from the "starter pack" meme, e.g. <br>
+            <br>
+            - "The Karen Starter Pack" with images of a short asymmetrical bob cut, shouting at retail store staff. <br>
+            - "The Mid-life Crisis Starter Pack" with images of a Harley Davidson and flashy cars. <br>
+            - "The Finance Bro Starter Pack" with images of The Wolf of Wallstreet, boat shoes and linen shorts. <br>
+            <br>
+            The Enterprise Starter Pack is all the I.T. infrastructure an enterprise or enterprise wanna-be would deploy, automated through infrastructure as code. <br>
+            <br>
+            <a href="https://github.com/r0dg3rl1/enterprise_starter_pack">Click here to find the project.</a>
+          </p>
+        </details>
+        <details class="project">
+          <summary class="project-title">
+            <h3>Lithuanian Diary</h3>
+          </summary>
+          <p class="project-description">
+            To learn the native language that my partner speaks and to be able to interact with family in this language, 
+            I am maintaining a diary in Lithuanian. <br>
+            <br>
+            <a href="./lithuanian-diary.html">Click here to observe my Lithuanian improve over time.</a>
+          </p>
+        </details>
+      </section>
+    </main>
+  </body>
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "01-20-2020";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
+</html>
